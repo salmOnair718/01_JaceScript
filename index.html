@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎</title>
+</head>
+
+<body>
+    <h1 id="heading">練習の見出し</h1>
+    <p id="elem">変化させたい要素</p>
+    <img id="image" src="https://picsum.photos/200/300?image=0">
+
+    <script>
+        const image = document.getElementById('image');
+        let sre = image.getAttribute('src')
+        console.log('image');
+
+        const p = document.getElementById('elem')
+        p.addEventListener('mouseover', function () {
+            image.setAttribute('src', 'https://picsum.photos/200/300?image=100');
+
+        });
+
+        p.addEventListener('mouseout', function () {
+            image.setAttribute('src', 'https://picsum.photos/200/300?image=100');
+
+        });
+
+        // document.getElementById('elem').style.color = "#FFOOOO";
+        // document.getElementById('elem').style.backgroundColor = "#0000FF";
+
+        // ※エラーを無くすコツは、括弧を書いたらすぐに閉じること！
+        // 変数を代入
+        // const elem = document.getElementById('elem');
+        // console.log(elem);
+        // elem.addEventListener('mouseover', function () {
+        //     // クリックしたらじゃ初めて実行されるよ
+        //     elem.style.color = '#ff0000';
+        //     elem.style.backgroundcolor = '#00ff00';
+        // });
+
+        // elem.addEventListener('mouseout', function () {
+        //     elem.style.color = '#000000';
+        //     elem.style.backgroundcolor = 'transparant';
+        // });
+
+        // const heading = document.getElementById('heading');
+        // console.log(heading);
+        // heading.addEventListener('click', function () {
+        //     heading.style.fontWeight = "bold";
+        //     heading.style.color = "#FFff00";
+        // });
+    </script>
+</body>
+
+</html>
