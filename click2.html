@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click2 Game</title>
+</head>
+
+<body>
+    <img id="monster" src="https://trident.takagino.net/doc2024/javascript/assets/03/monster.png" alt="">
+    <p id="hp"></p>
+    <p id="word"></p>
+
+    <script>
+        const monster = document.getElementById('monster');
+        const hp = document.getElementById('hp');
+
+        let count = 0;
+        hp.innerHTML = `HP:${count}`;
+
+
+        monster.addEventListener('click', function () {
+            if (count < 30) {
+                hp.innerHTML = `HP:${count += 1}`;
+            }
+
+            if (count <= 0) {
+                word.innerHTML = '10回達成、おめでとう!'
+            } else if (count >= 20) {
+                word.innerHTML = '20回達成、おめでとう!'
+            } else if (count = 30) {
+                word.innerHTML = '30回クリア!おめでとう!'
+            }
+
+        });
+
+
+        // 正答
+        // const monster = document.getElementById('monster');
+        // const hp = document.getElementById('hp');
+
+        // let count = 0;
+        // hp.innerHTML = `${count}回`;
+
+        // monster.addEventListener('click', function () {
+        //     if (count < 30) {
+        //         count += 1;
+        //         if (count == 10) {
+        //             hp.innerHTML = '10回達成、おめでとう！'
+        //         } else if (count == 20) {
+        //             hp.innerHTML = '20回達成、おめでとう！'
+        //         } else if (count == 30) {
+        //             hp.innerHTML = '30回クリア！おめでとう！'
+        //         } else {
+        //             hp.innerHTML = `${count}回`;
+        //         }
+        //     }
+        // });
+
+
+
+        // memo
+        //   else if (count % 10 == 0)
+        // カウント数を10で割った時、あまりが０だったら文字が出る
+    </script>
+</body>
+
+</html>

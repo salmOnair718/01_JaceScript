@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件分岐if</title>
+</head>
+
+<body>
+    <p id="sample" class="hoge fuga">ほげ</p>
+    <script>
+        let fruit = 'りんご';
+        console.log(fruit == 'りんご');
+        console.log(fruit == 'バナナ');
+
+        if (fruit == 'ばなな') {
+            console.log('りんごがあります。');
+        }
+
+
+        // let year = 2024;
+        // console.log(year == '2016');
+        // if (year >= 2019) {
+        //     console.log('令和！')
+        // }
+        // if (year > 2018) {
+        //     console.log(`令和${year - 2018}年！`);
+        // }
+
+        let num = 25;
+
+        if (num % 2 === 0) {
+            console.log('偶数！')
+        } else {
+            console.log('奇数！')
+        }
+
+
+        // let year = 2024;
+
+        // if (year <= 1925) {
+        //     console.log('大昔！')
+        // } else if (year <= '1989') {
+        //     console.log('昭和${year-1925}年！')
+        // } else if (year <= '2018') {
+        //     console.log('平成${year-1989}年！')
+        // } else if (year <= '2024') {
+        //     console.log('令和${year -2018}年！')
+        // } else if (year >= '2025') {
+        //     console.log('未来！')
+        // }
+
+        let year = 1925;
+
+        if (year <= 1925) {
+            console.log(`大昔！`);
+        } else if (year <= 1989) {
+            console.log(`昭和${year - 1925}年！`);
+        } else if (year <= 2018) {
+            console.log(`平成${year - 1989}年！`);
+        } else if (year <= 2024) {
+            console.log(`令和${year - 2018}年！`);
+        } else {
+            console.log(`未来！`);
+        }
+
+
+        const sample = document.getElementById('sample');
+        console.log(sample.classlist);
+
+        sample.classlist.add('piyo');
+        sample.classlist.remove('hoge')
+        // remove=消える、取り除く
+
+    </script>
+
+</body>
+
+</html>

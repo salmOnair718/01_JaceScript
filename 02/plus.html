@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習01</title>
+</head>
+
+<body>
+    <p id="result">0</p>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+
+    <script>
+
+        let num = 0;
+        const result = document.getElementById('result');
+        const plusBtn = document.getElementById('plus');
+        const minusBtn = document.getElementById('minus');
+        // plusBtn.innerHTML = "数字を増やす";
+
+        plusBtn.addEventListener('click', function () {
+            num = num + 1;
+            result.innerHTML = num;
+            // console.log(num);
+        });
+
+        minusBtn.addEventListener('click', function () {
+            num = num - 1;
+            result.innerHTML = num;
+        });
+
+
+        let val = 1;
+        console.log(18 + 'px');
+
+
+    </script>
+</body>
+
+</html>
