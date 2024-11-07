@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ</title>
+    <style>
+        #result {
+            transition: 1s;
+        }
+
+        .active {
+            transform: rotateY(360deg);
+        }
+
+        .daikiti {
+            background-color: #f74a4a;
+        }
+
+        .chukiti {
+            background-color: #ffb41f;
+        }
+
+        .shoukiti {
+            background-color: #00c73d;
+        }
+
+        .kyou {
+            background-color: #404094;
+            color: #fff;
+        }
+
+        .daikyou {
+            background-color: #50017a;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">占う</button>
+    <p><img id="result" src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/omikuji.png" alt=""></p>
+    <p id="message">何か一言が表示されます。</p>
+    <ul id="count"></ul>
+
+    <script>
+        // 占うボタン
+        const btn = document.getElementById('btn');
+        // 結果表示
+        const result = document.getElementById('result');
+        // メッセージ
+        const message = document.getElementById('message');
+        // 画像リンクの小通部分を変数で代入
+        const path = 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji';
+
+        let daikiti = 0;
+        let chukiti = 0;
+        let shoukiti = 0;
+        let kyou = 0;
+        let daikyou = 0;
+
+        const count = document.getElementById('count');
+        count.innerHTML = `<li>大吉：${daikiti}</li>
+    <li>中吉：${chukiti}</li>
+    <li>小吉：${shoukiti}</li>
+    <li>凶：${kyou}</li>
+    <li>大凶：${daikyou}</li>`;
+
+        // ランダムに結果を変えたい,小数点をfloorで切り捨て
+        btn.addEventListener('click', function () {
+            const num = Math.floor(Math.random() * 10);
+
+            // switch(値)、case始まり、break終わり
+            switch (num) {
+                case 0:
+                    // 属性を設定-setAttribute
+                    result.setAttribute('src', `${path}/daikichi.png`);
+                    message.innerHTML = '買ってないのに宝くじが当たる';
+                    daikiti += 1;
+                    document.body.classList.toggle('daikiti');
+
+                    switch (daikiti) {
+                        // 出た回数によってコメントを変える
+                        case 1:
+                            message.innerHTML = '大吉1回目！おめでとう';
+                            break;
+                        case 2:
+                            message.innerHTML = '２日目！！すごい！！';
+                            break;
+                        default:
+                            message.innerHTML = '強運の持ち主！！';
+                            break;
+                    }
+                    break;
+
+                case 1:
+                case 2:
+                    result.setAttribute('src', `${path}/chuukichi.png`);
+                    message.innerHTML = '何もしてないのに褒められる';
+                    chukiti += 1;
+                    document.body.classList.toggle('chukiti');
+                    break;
+
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                    result.setAttribute('src', `${path}/syoukichi.png`);
+                    message.innerHTML = '頭皮の調子が良い';
+                    shoukiti += 1;
+                    document.body.classList.toggle('shoukiti');
+                    break;
+
+                case 7:
+                case 8:
+                    result.setAttribute('src', `${path}/kyou.png`);
+                    message.innerHTML = 'コンタクトレンズが割れる';
+                    kyou += 1;
+                    document.body.classList.toggle('kyou');
+                    break;
+
+                case 9:
+                    result.setAttribute('src', `${path}/daikyou.png`);
+                    message.innerHTML = 'どこかの骨を折る';
+                    daikyou += 1;
+                    document.body.classList.toggle('daikyou');
+                    break;
+
+                default:
+                    console.log('エラー');
+                    break;
+            }
+
+            result.classList.toggle('active');
+
+            count.innerHTML = `<li>大吉：${daikichi}</li>
+    <li>中吉：${chuukichi}</li>
+    <li>小吉：${syoukichi}</li>
+    <li>凶：${kyou}</li>
+    <li>大凶：${daikyou}</li>`;
+        });
+    </script>
+</body>
+
+</html>

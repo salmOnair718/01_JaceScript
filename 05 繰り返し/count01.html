@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count01</title>
+</head>
+
+<body>
+    <button id="count">カウント</button>
+    <button id="sum">合計</button>
+    <p id="result">0</p>
+
+    <script>
+        let num = 0;
+        let plus = 0;
+
+        const count = document.getElementById('count');
+        const sum = document.getElementById('sum');
+        const result = document.getElementById('result');
+
+        result.innerHTML = num;
+
+        count.addEventListener('click', function () {
+            num += 1;
+            result.innerHTML = num;
+        });
+        sum.addEventListener('click', function () {
+            num += 1;
+            while (num > 0) {
+                plus += num;
+                num -= 1;
+            }
+            result.innerHTML = plus;
+        });
+    </script>
+</body>
+
+</html>

@@ -5,10 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>条件分岐if</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
-    <p id="sample" class="hoge fuga">ほげ</p>
+    <p id="sample" class="hoge fuga">hoge</p>
+
+    <script>
+        const sample = document.getElementById('sample');
+        console.log(sample.classlist.value);
+
+        sample.classlist.add('piyo');
+    </script>
+    <!-- <p id="sample" class="hoge fuga">ほげ</p>
     <script>
         let fruit = 'りんご';
         console.log(fruit == 'りんご');
@@ -71,9 +82,10 @@
 
         sample.classlist.add('piyo');
         sample.classlist.remove('hoge')
-        // remove=消える、取り除く
+        // remove=消える、取り除く -->
 
     </script>
+
 
 </body>
 
