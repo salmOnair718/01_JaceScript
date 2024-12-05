@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ</title>
+    <style>
+        #result {
+            transition: 1s;
+        }
+
+        .active {
+            transform: rotateY(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">占う</button>
+    <p><img id="result" src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/omikuji.png" alt=""></p>
+    <p id="message">何か一言が表示されます。</p>
+    <ul id="count"></ul>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+        const message = document.getElementById('message');
+        const path = 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji';
+
+        const files = ['daikichi.png', 'chuukichi.png', 'syoukichi.png', 'kyou.png', 'daikyou.png'];
+        const texts = ['買ってないのに宝くじが当たる', '何もしてないのに褒められる', '頭皮の調子が良い', 'コンタクトレンズが割れる', 'どこかの骨を折る'];
+
+        // //回数追加
+        // let daikichi = 0;
+        // let chuukichi = 0;
+        // let syoukichi = 0;
+        // let kyou = 0;
+        // let daikyou = 0;
+
+        const labels = ['大吉', '中吉', '小吉', '凶', '大凶'];
+        const counts = [0, 0, 0, 0, 0];
+
+        const count = document.getElementById('count');
+        let allText;
+        for (let i = 0; i < lavels.length; i++) {
+            allText += `<li>${labels[i]}:${counts[i]}</li>`
+        };
+        count.innerHTML = `<li>${labels[0]}:${counts[0]}</li >
+                        <li>中吉：${counts[1]}</li>
+                        <li>小吉：${counts[2]}</li>
+                        <li>凶：${counts[3]}</li>
+                        <li>大凶：${counts[4]}</li>`;
+
+
+        btn.addEventListener('click', function () {
+            const num = Math.floor(Math.random() * files.length);
+
+            result.setAttribute('src', `${path}/${files[num]}`);
+            message.innerHTML = texts[num];
+            counts[num]++;
+
+            result.classList.toggle('active');
+
+            //回数更新
+            count.innerHTML = `<li>大吉：${daikichi}</li>
+                        <li>中吉：${chuukichi}</li>
+                        <li>小吉：${syoukichi}</li>
+                        <li>凶：${kyou}</li>
+                        <li>大凶：${daikyou}</li>`;
+        });
+    </script>
+</body>
+
+</html>

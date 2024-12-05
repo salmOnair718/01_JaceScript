@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        move.html
+    </title>
+</head>
+
+<body>
+    <div>
+        <button id="right">→</button>
+    </div>
+
+    <img id="monster" src="https://pbs.twimg.com/media/EXae-7lWkAANYU6.png" alt="">
+
+    <script>
+        // let=変数、再代入可能（値の再代入）
+        let position = 0;
+
+        // const=定数、再代入できない
+        const right = document.getElementById("right");
+        const monster = document.getElementById("monster");
+
+        // 矢印ボタンをクリックする度に、画像が右に10pxずつ移動する。
+        monster.addEventListener('click', function () {
+            position = position + 1;
+            result.style.transform = `{num}+$(10)+'px'`;
+        });
+        // console.log(0 + 10 + 'px');
+
+
+        // 途中
+
+    </script>
+
+</body>
+
+</html>

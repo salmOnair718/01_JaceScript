@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        plus.html
+    </title>
+</head>
+
+<body>
+    <p id="result">0</p>
+    <button id="plus">+</button>
+
+    <script>
+        // 変数の宣言
+        let num = 0;
+
+        const result = document.querySelector("#result");
+        const plusButton = document.querySelector("#plus");
+
+        plusButton.addEventListener("click",
+            function () {
+                num = num + 1;
+                result.innerHTML = num;
+            }
+        );
+
+        // 完成
+
+    </script>
+
+</body>
+
+</html>
