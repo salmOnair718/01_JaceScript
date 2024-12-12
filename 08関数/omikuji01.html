@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ランダムなおみくじ</title>
+</head>
+
+<body>
+    <div>
+        <button class="start">start</button>
+        <button class="stop">stop</button>
+    </div>
+    <img class="pic" src="https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/omikuji.png" alt="" />
+
+    <script>
+        // ランダムに変化する画像を、ボタンクリックで止める「おみくじ」を実装する。
+
+        const url = 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/';
+        const files = ['daikichi.png', 'chuukichi.png', 'syoukichi.png', 'kyou.png', 'daikyou.png'];
+
+
+        const startBtn = document.querySelector(".start");
+        const stopBtn = document.querySelector(".stop");
+        const pic = document.querySelector(".pic");
+
+        let timer;
+
+        const picture = () => {
+            const path = `${url}${files[Math.floor(Math.random() * files.length)]}`;
+            pic.setAttribute("src", path);
+            timer.setTimeout(picture, 1000);
+        };
+
+        startBtn.addEventListener("click", () => {
+            clearTimeout(timer);
+            timer = setTimeout(picture, 100);
+        });
+
+        stopBtn.addEventListener("click", () => {
+            clearTimeout(timer);
+        });
+        // timer.setTimeout(countUP, 1000);
+
+    </script>
+</body>
+
+</html>

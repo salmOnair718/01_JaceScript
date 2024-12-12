@@ -37,28 +37,85 @@
         //     return `hello! ${txt}`;
         // }
 
-        const testFunc = function (val1, val2) {
-            return val1 + val2;
+        // const testFunc = function (val1, val2) {
+        //     return val1 + val2;
 
-            let num = testFunc(10, 20);
-            console.log(num);
-        }
+        //     let num = testFunc(10, 20);
+        //     console.log(num);
+        // }
 
-        //   アロー関数
-        const setZero = (val) => {
-            if (val >= 0 && val < 10) {
-                val = `0${val}`;
-            }
-            return val;
-        };
+        // //   アロー関数
+        // const setZero = (val) => {
+        //     if (val >= 0 && val < 10) {
+        //         val = `0${val}`;
+        //     }
+        //     return val;
+        // };
 
         // 練習
-        let value = [5, 10, 15, 20, 25];
-        const getAverage = (val) => {
-            return val;
-            getAverage(value);
-        }
-        console.log(getAverage);
+
+        // 変数宣言
+        // let value = [5, 10, 15, 20, 25];
+        // キャメルケース-2語目の頭は大文字
+        // const getAverage = (val) => {
+        //     let num = 0;
+        //     for (let i = 0; i < val.length; i++) {
+        //         num += val[i];
+        //     }
+
+        //     num /= val.length;
+        //     return num;
+        // };
+        // console.log(getAverage([5, 10, 15, 20, 25]));
+        // 上の値を渡す
+
+
+
+        // 3. イベントと関数
+
+        // 従来
+        // window.addEventListener("click", function () {
+        //     console.log("click");
+        // });
+        // // new
+        // const clickEvent = () => {
+        //     console.log("click!");
+        // };
+        // window.addEventListener("click", clickEvent);
+        // // 括弧をつけると,イベント発生前に実行される!注意！
+
+
+        // 4.タイマー処理
+
+        // 1秒＝1000ミリ秒
+
+        // let count = 0;
+        // let timer;
+        // // 変数宣言
+
+        // const countUp = () => {
+        //     console.log(count++);
+        // };
+
+        // // let color = [#f00, #f90, #ff0,#3f0,#0fc,#08f,#00f];
+        // const color = () => {
+        //     let r = Math.floor(Math.random() * 256);
+        //     let g = Math.floor(Math.random() * 256);
+        //     let b = Math.floor(Math.random() * 256);
+        // }
+
+        // // 0から255までの256色をランダムに表示
+        // // 数字が細かくなってしまうのでfloorで切り捨て
+
+        // setInterval(countUp, 1000)
+
+        // 1秒後に一回だけ実行する
+        let count = 0;
+        const countUP = function () {
+            console.log(count++);
+        };
+
+        setTimeout(countUP, 1000);
     </script>
 </body>
 
