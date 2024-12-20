@@ -17,31 +17,55 @@
     <script>
         // ランダムに変化する画像を、ボタンクリックで止める「おみくじ」を実装する。
 
-        const url = 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/';
-        const files = ['daikichi.png', 'chuukichi.png', 'syoukichi.png', 'kyou.png', 'daikyou.png'];
+        // const url = 'https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/';
+        // const files = ['daikichi.png', 'chuukichi.png', 'syoukichi.png', 'kyou.png', 'daikyou.png'];
 
+
+        // const startBtn = document.querySelector(".start");
+        // const stopBtn = document.querySelector(".stop");
+        // const pic = document.querySelector(".pic");
+
+        // let timer;
+
+        // const picture = () => {
+        //     const path = `${url}${files[Math.floor(Math.random() * files.length)]}`;
+        //     pic.setAttribute("src", path);
+        //     timer.setTimeout(picture, 1000);
+        // };
+
+        // startBtn.addEventListener("click", () => {
+        //     clearTimeout(timer);
+        //     timer = setTimeout(picture, 100);
+        // });
+
+        // stopBtn.addEventListener("click", () => {
+        //     clearTimeout(timer);
+        // });
+        // timer.setTimeout(countUP, 1000);
+
+
+        const url = "https://trident.takagino.net/doc2024/javascript/assets/04/omikuji/";
+        const files = ["daikichi.png", "chuukichi.png", "syoukichi.png", "kyou.png", "daikyou.png"];
 
         const startBtn = document.querySelector(".start");
         const stopBtn = document.querySelector(".stop");
         const pic = document.querySelector(".pic");
-
         let timer;
 
-        const picture = () => {
-            const path = `${url}${files[Math.floor(Math.random() * files.length)]}`;
+        const changePic = () => {
+            const path = `${url}${filrs[Math.floor(Math.random() * files.length)]}`;
             pic.setAttribute("src", path);
-            timer.setTimeout(picture, 1000);
+            timer = setTimeout(changePic, 100);
         };
 
         startBtn.addEventListener("click", () => {
             clearTimeout(timer);
-            timer = setTimeout(picture, 100);
+            timer = setTimeout(changePic, 100);
         });
 
         stopBtn.addEventListener("click", () => {
             clearTimeout(timer);
         });
-        // timer.setTimeout(countUP, 1000);
 
     </script>
 </body>

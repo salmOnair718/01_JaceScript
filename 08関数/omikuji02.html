@@ -21,6 +21,27 @@
         const files = ['daikichi.png', 'chuukichi.png', 'syoukichi.png', 'kyou.png', 'daikyou.png'];
 
 
+
+        const startBtn = document.querySelector(".start");
+        const stopBtn = document.querySelector(".stop");
+        const pic = document.querySelector(".pic");
+        let timer;
+        let num = 0;
+
+        const changePic = () => {
+            const path = `${url}${files[num++ % files.length]}`;
+            pic.setAttribute("src", path);
+            timer = setTimeout(changePic, 500);
+        };
+
+        startBtn.addEventListener("click", () => {
+            clearTimeout(timer);
+            timer = setTimeout(changePic, 500);
+        });
+
+        startBtn.addEventListener("click", () => {
+            clearTimeout(timer);
+        });
     </script>
 </body>
 
