@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .faq {
+            max-width: 800px;
+            margin: 3em auto;
+        }
+
+        .faq__q {
+            padding: 0.5em 1em;
+            background-color: #39c;
+            cursor: pointer;
+        }
+
+        /*
+        .faq__a {
+            margin-left: 0;
+            padding: 0 1em;
+        } */
+
+        .faq__a {
+            height: 0;
+            margin-left: 0;
+            padding: 0 1em;
+            overflow: hidden;
+        }
+
+        .active.faq__a {
+            height: auto;
+            padding: 0.5em 1em;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- コメント -->
+    <h1>ランダムな数字を生成</h1>
+    <p>これは段落です。</p>
+    <!-- <dl class="faq">
+        <div class="faq__item">
+            <dt class="faq__q">2022年11月分の料金はいつ引き落としされますか？</dt>
+            <dd class="faq__a">お客さまの締め日によって異なり、毎月6日、16日、26日の引き落とし日に分かれます。</dd>
+        </div>
+        <div class="faq__item">
+            <dt class="faq__q">前月分の料金が確定するのはいつですか？</dt>
+            <dd class="faq__a">お客さまの締め日から10日後が料金確定日の目安です。</dd>
+        </div>
+        <div class="faq__item">
+            <dt class="faq__q">請求書が届きました。「PayPay」で支払うことはできますか？</dt>
+            <dd class="faq__a">「PayPay」でお支払いできます。</dd>
+        </div>
+    </dl> -->
+
+    <button id="btn">生成</button>
+
+
+    <script>
+        // どこが空いているか管理するため /
+        // // let active = 0;
+        // const q = document.querySelectorAll(".fscyituy");
+        // // for (let t = 0)
+        // q[t].addEventListener("click".()=> {
+        //     q[activre].parentElement.classList.remove("active");
+        //     q[activre].parentElement.classList.add("active");
+        // });
+
+        // const ul = document.createElement("ul");
+        // ul.classList.add("sample");
+        // ul.innerHTML = "サンプル";
+        // console.log(ul);
+
+        const url = [
+            https://images.app.goo.gl/hGx6SqFBuJUSVWjg6,
+            https://images.app.goo.gl/DAwr2LC5thPvxcPo8,
+            https://images.app.goo.gl/bNbBn2Gg3gbJVAEq9,
+            https://images.app.goo.gl/hY4KDi3q7KfYB1HKA,
+            https://images.app.goo.gl/nytdUQkZB39US6JJ9,
+            https://images.app.goo.gl/iLyrD9zeHWkMu1d26
+        ];
+        const btn = document.querySelector("#btn");
+        const ul = document.createElement("ul");
+        document.body.append(ul);
+
+        btn.addEventListener("click", () => {
+            const li = document.createElement("li");
+            const img = document.createElement("img");
+            // li.innerHTML = Math.floor(Math.random() * 1000);
+            // img.innerHTML = Math.random() * 6;
+            img.setAttribute("src", url[Math.floor(Math.random() * url.length)]);
+            img.setAttribute("width", "150");
+            li.append(img);
+            ul.append(li);
+        })
+
+
+    </script>
+</body>
+
+</html>
